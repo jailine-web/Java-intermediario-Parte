@@ -26,9 +26,14 @@ public class Programa {
 		em.persist(p3);
 		em.getTransaction().commit();*/
 		
-		//busca uma pessoa pelo ID
+		//busca uma pessoa pelo ID (passo 1)
 		Pessoa p = em.find(Pessoa.class, 2);
-		System.out.println(p);
+		
+		//maneira correta de excluir dados (passo 1 -> passo2)
+		em.getTransaction().begin();
+		em.remove(p);
+		em.getTransaction().commit();
+		
 		System.out.println("Feito");
 		em.close();
 		emf.close();
