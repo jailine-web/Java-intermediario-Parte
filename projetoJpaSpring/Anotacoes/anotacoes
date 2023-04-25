@@ -1,0 +1,22 @@
+Para falar que a classe é um recurso web que é implementado 
+por um controlador rest utiliza-se a anotação: @RestController
+em cima do nome da classe.
+A anotação @RequestMapping um nome/apelido para o recurso
+
+Testar se o recurso está funcionado:
+
+O tipo ResponseEntity retorna respostas de requisições web
+Método(endpoint) para acessar os usuários: findAll().
+.ok() para retornar a resposta com sucesso no http.
+.body() retorna o corpo da resposta do usuário(u) que foi instanciado
+
+Para indicar que o método vai ser um método que responde a requisição do tipo get
+http coloca-se a anotação @GetMapping
+
+Para testar:
+1- Clica no botão verde (local) na IDE
+2- Clica em cima do projeto com o botão direito do mouse
+3- Clica em restart
+4- Se não tiver erros
+5- Abre o navegador
+6- insere o link: localhost:8080/nomeDoRecurso.
