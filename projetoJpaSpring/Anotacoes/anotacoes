@@ -85,4 +85,20 @@ A anotação @JoinColumn( name ="client_id") -> da o nome a chave estrangeira qu
 Order --> private User client;
 @Table(name ="tb_order") renomeia a tabela no BD
 
+Formato da data ISO8601;
+JsonIgnore em um dos lados evitar loop infinito causado pelo relacionamento criado dos dois lados (cliente(User) e Order)
+
+O comando : spring.jpa.open-in-view = true permite que o jackson gerencie o json especificando que os clientes irá precisar 
+dos pedidos dos usuários (vice-versa) e ele aciona o JPA para que trazer dos banco de dados esses pedidos. Ex: chama os 
+cliente associados ao pedido e vice-versa.
+
+Para garantir que o instante seja mostrado no json no formato de ISO 8606 utiliza-se a anotation do jackson: 
+@JsonFormat(shape = JsonFormat.shape.string, pattern = "yyyy-dd-'T'HH:mm:ss'Z'", timezone="GMT")
+
+
+
+
+
+
+
 
