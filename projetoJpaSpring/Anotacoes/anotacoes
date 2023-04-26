@@ -30,17 +30,18 @@ ele já vem integrado ao projeto.
 
 profile de teste é um perfil do projeto específico para realizar testes.
 Sobre o arquivo application-test.properties:
-spring.datasource.url=jdbc:h2:mem:testdb é a String de conexão dom o banco de dados
-o nome dado ao banco foi testedb.
+spring.datasource.url=jdbc:h2:mem:testdb é a String de conexão dom o banco 
+de dados. O nome dado ao banco foi testedb.
+
 Nome do usuário é sa e a senha está vazia.
-O comando spring.h2.console.enable=true define que o
-concole está habilitado
-O comando spring.h2.console.path=/h2-console define que o 
-caminho para acessar o adm do H2 é /h2-console 
+O comando spring.h2.console.enable=true define que o concole está habilitado
+O comando spring.h2.console.path=/h2-console define que o caminho para acessar 
+o adm do H2 é /h2-console 
 
 As duas últimas especificações são referntes ao JPA.
-show-sql: serve para mostrar no log da aplicação o comando SQL que foi executado pelo JPA
-o outro é para formatar o SQL de forma que ele fique mais legível
+
+show-sql: serve para mostrar no log da aplicação o comando SQL que foi executado
+ pelo JPA. o outro é para formatar o SQL de forma que ele fique mais legível.
 
 ### configuração de testes ###
 
@@ -50,8 +51,8 @@ necessário inserir a anotação @Profile("test"); nome inserido na primeira lin
 application.properties.
 A classe testCon... serve popular o banco de dados com objetos, e para 
 Repository salva os dados
-@Autowired serve para realizar a injeção de dependências, indicando o ponto exato onde a 
-injeção automática deve ser aplicada, podendo ser utilizada em métodos, atributos e construtores 
+@Autowired serve para realizar a injeção de dependências, indicando o ponto exato onde a injeção
+ automática deve ser aplicada, podendo ser utilizada em métodos, atributos e construtores 
 <https://medium.com/@leonardogiuliani/autowired-e-a-inje%C3%A7%C3%A3o-de-depend%C3%AAncia-do-spring-d8864cc9af50> 
 
 ## CommandLine ##
@@ -62,13 +63,26 @@ Tudo que estiver dentro do método run será executado quando a aplicação for 
 
 A camada de serviço realiza o meio de campo entre a camada de controle e a camada de repositórios
 
-Onde fica as regras de negócio. Criar validações para não sobrecarregar o controlador com diversas regras de negócios
-fazendo com que o controlador fique responsável apenas pela intermediação entre a aplicação e as regras de negócio. 
+Onde fica as regras de negócio. Criar validações para não sobrecarregar o controlador com diversas 
+regras de negócios fazendo com que o controlador fique responsável apenas pela intermediação entre 
+a aplicação e as regras de negócio. 
 
-@Component/@Service/@repository - Registra sua classe como um componente do Spring para que injeção de dependência possa ser realizada pelo 
-autowired
+@Component/@Service/@repository - Registra sua classe como um componente do Spring para que injeção
+de dependência possa ser realizada pela anotação @autowired
 
-A anotação @GetMapping(value = "/{id}") permite que o id seja passado via url, dizendo que a url tem um parâmetro.
+A anotação @GetMapping(value = "/{id}") permite que o id seja passado via url, dizendo que a url tem 
+um parâmetro.
 
 Para receber o parâmetro e aceitá-lo coloca-se o @PathVariable
+
+## Order (Pedido) M##
+
+Relacionamento entre pedido e cliente para o JPA transformar isso em chave estrangeira no banco de 
+dados. A anotação @ManyToOne define o relacionamento muitos para um, mapeando os definitivos atributos
+A anotação @JoinColumn( name ="client_id") -> da o nome a chave estrangeira que será criada no BD
+
+@OneToMany(mappedBy = "client") liga os relacionametos por meio do cliente integrado na classe 
+Order --> private User client;
+@Table(name ="tb_order") renomeia a tabela no BD
+
 
