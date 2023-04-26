@@ -10,8 +10,8 @@ Método(endpoint) para acessar os usuários: findAll().
 .ok() para retornar a resposta com sucesso no http.
 .body() retorna o corpo da resposta do usuário(u) que foi instanciado
 
-Para indicar que o método vai ser um método que responde a requisição do tipo get
-http coloca-se a anotação @GetMapping
+Para indicar que o método vai ser um método que responde a requisição
+do tipo get http coloca-se a anotação @GetMapping
 
 Para testar:
 1- Clica no botão verde (local) na IDE
@@ -20,3 +20,29 @@ Para testar:
 4- Se não tiver erros
 5- Abre o navegador
 6- insere o link: localhost:8080/nomeDoRecurso.
+
+
+#### H2 ####
+
+H2 é um banco de dados em memória (não precisa instalar nada no computador), 
+muito utilizado em java para fazer testes na aplicação.
+ele já vem integrado ao projeto.
+
+profile de teste é um perfil do projeto específico para realizar testes.
+Sobre o arquivo application-test.properties:
+spring.datasource.url=jdbc:h2:mem:testdb é a String de conexão dom o banco de dados
+o nome dado ao banco foi testedb.
+Nome do usuário é sa e a senha está vazia.
+O comando spring.h2.console.enable=true define que o
+concole está habilitado
+O comando spring.h2.console.path=/h2-console define que o 
+caminho para acessar o adm do H2 é /h2-console 
+
+As duas últimas especificações são referntes ao JPA.
+show-sql: serve para mostrar no log da aplicação o comando SQL que foi executado pelo JPA
+o outro é para formatar o SQL de forma que ele fique mais legível
+
+
+
+
+
