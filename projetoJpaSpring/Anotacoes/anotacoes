@@ -42,7 +42,17 @@ As duas últimas especificações são referntes ao JPA.
 show-sql: serve para mostrar no log da aplicação o comando SQL que foi executado pelo JPA
 o outro é para formatar o SQL de forma que ele fique mais legível
 
+### configuração de testes ###
 
+Para indicar que a classe é uma específica de configuração é necessário inserir a anotação
+@Configuration. E para dizer que a classe é uma config especifica para o perfil de teste é 
+necessário inserir a anotação @Profile("test"); nome inserido na primeira linha do arquivo 
+application.properties.
+A classe testCon... serve popular o banco de dados com objetos, e para 
+Repository salva os dados
+@Autowired serve para realizar a injeção de dependências, indicando o ponto exato onde a 
+injeção automática deve ser aplicada, podendo ser utilizada em métodos, atributos e construtores <https://medium.com/@leonardogiuliani/autowired-e-a-inje%C3%A7%C3%A3o-de-depend%C3%AAncia-do-spring-d8864cc9af50> 
 
+## CommandLine ##
 
-
+Tudo que estiver dentro do método run será executado quando a aplicação for iniciada
