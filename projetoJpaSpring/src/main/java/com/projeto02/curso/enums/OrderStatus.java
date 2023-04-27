@@ -2,6 +2,7 @@ package com.projeto02.curso.enums;
 
 public enum OrderStatus {
 
+	//Controla manualmente o código de cada valor
 	WAITING_PAYMENT(1),
 	PAID(2),
 	SHIPPED(3),
