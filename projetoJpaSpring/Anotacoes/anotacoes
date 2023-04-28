@@ -103,8 +103,9 @@ Para garantir que o instante seja mostrado no json no formato de ISO 8606 utiliz
 
 O @Transient: Impede que o JPA tente intrepertar alguns elementos
 
+@JoinTable(@Name="tb_product_category") define o nome da tabela no banco de dados
 
-
-
-
+@JoinColumn(name = "product_id") nome da chave estrangueira
+referente a tabela de produtos.
+inverseJoinColumns = @JoinColumn(name = "categories")) define o nome da chave estrangueira(da outra tabela) da tabela categoria
 
