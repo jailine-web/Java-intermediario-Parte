@@ -52,12 +52,15 @@ Para indicar que a classe é uma específica de configuração é necessário in
 @Configuration. E para dizer que a classe é uma config especifica para o perfil de teste é 
 necessário inserir a anotação @Profile("test"); nome inserido na primeira linha do arquivo 
 application.properties.
-A classe testCon... serve popular o banco de dados com objetos, e para 
+A classe testConf... serve popular o banco de dados com objetos.
+
 Repository salva os dados
 @Autowired serve para realizar a injeção de dependências, indicando o ponto exato onde a injeção
  automática deve ser aplicada, podendo ser utilizada em métodos, atributos e construtores 
 <https://medium.com/@leonardogiuliani/autowired-e-a-inje%C3%A7%C3%A3o-de-depend%C3%AAncia-do-spring-d8864cc9af50> 
+Autowired: para que o Spring faça a injeção de dependência de forma transparente ao programador
 
+@GetMapping(value = "/{id}") //permite que o id seja passado via url, dizendo que a url tem um parâmetro.
 ## CommandLine ##
 
 Tudo que estiver dentro do método run será executado quando a aplicação for iniciada
@@ -98,7 +101,7 @@ cliente associados ao pedido e vice-versa.
 Para garantir que o instante seja mostrado no json no formato de ISO 8606 utiliza-se a anotation do jackson: 
 @JsonFormat(shape = JsonFormat.shape.string, pattern = "yyyy-dd-'T'HH:mm:ss'Z'", timezone="GMT")
 
-
+O @Transient: Impede que o JPA tente intrepertar alguns elementos
 
 
 
