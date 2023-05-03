@@ -109,3 +109,6 @@ O @Transient: Impede que o JPA tente intrepertar alguns elementos
 referente a tabela de produtos.
 inverseJoinColumns = @JoinColumn(name = "categories")) define o nome da chave estrangueira(da outra tabela) da tabela categoria
 
+Associação um para um: @OneToOne e @MapsId na classe dependente que é o pagamento
+
+Na classe independente faz: @OneToOne(mapped = "order", cascade = CascadeType.All) para que as duas classes tenham o mesmo id
