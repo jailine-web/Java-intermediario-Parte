@@ -118,10 +118,18 @@ Na classe independente faz: @OneToOne(mapped = "order", cascade = CascadeType.Al
 Com a aplicação spring rodando, abrir o postman
 
 Na aba Body subaba raw inserir o doc json referente a ordem da classe(user).
-Marcar no meno o formato JSON, verificar se a opção content-type está ativa no campo headers
+Marcar no menu o formato JSON, verificar se a opção content-type está ativa no campo headers
 Clica em enviar.
+EX: Post --> localhost:8080/users : o útimo atributo é a tabela onde os itens serão inseridos, adiciona aos dados na aba
+body, seleciona o formato json e envia a requisição
+
 É mais adequado retornar o código 201 :
 Post insere || Get recupera
+
+Para excluir um objeto pelo id no banco de dados:
+
+Seleciona o campo delete no menu suspenso antes da requisição e passa o caminho do id
+Ex: localhost:8080/users/1  o último atributo é o id que será excluido.
 
 
 
